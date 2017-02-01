@@ -1,0 +1,33 @@
+<!DCTYPE HTML>
+
+<html>
+<head>
+    <title> Coding Convention C# </title>
+    <meta charset="utf-8">
+    <link href="../css/indexCSS.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="body">
+<h3>2.6	Structures</h3>
+        <p>•	Structures can include public fields.</p>
+<p>•	Do not create structure with 2 or more constructors. Use classes instead.</p>
+<h3>2.7	Events and delegates</h3>
+<p>•	Use an EventHandler suffix on delegates names. </p>
+<p>•	Specify two parameters named sender and e. The sender parameter represents the object</p>
+        <p>that raised the event. The sender parameter is always of type object, even if it is possible</p>
+        <p>to use a more specific type. The state associated with the event is encapsulated in an</p>
+        <p>instance of an event class named e. Use an appropriate and specific event class for the e parameter type. </p>
+<p>•	Name an event argument class with the EventArgs suffix. </p>
+<p>•	Consider naming events with a verb. </p>
+<p>•	Do not use a prefix or suffix in the event declaration. For example, use Close instead</p> <p>of OnClose. </p>
+<p>•	Function name that is passed to the delegate has to be named as following: name of the</p> <p>object that has raised the event, underscore symbol, name of the raised event. For example: </p><p>Circle_ColorChanged.
+<p>public delegate void ColorEventHandler( object sender, ShapeEventArgs e);</p>
+
+<p>public event ColorEventHandler ColorChanged;</p>
+
+<p>Circle1.ColorChanged += new Shape.ColorEventHandler(Circle1_ColorChanged);</p>
+        </div>
+        <a href="list.html" > Back to Table List </a>
+    </body>
+</html>

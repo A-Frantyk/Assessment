@@ -1,0 +1,778 @@
+﻿body {
+    background-color: #EEEEEE;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #11B8D5;
+}
+
+#header {
+    margin-bottom: 50px;
+}
+
+#logo {
+}
+
+#main-content {
+    margin-top: 50px;
+    min-height: 100vh;
+    margin-bottom: 35px;
+}
+
+#loa {
+    width: auto;
+    height: 420px;
+    min-height: 290px;
+    max-height: 420px;
+    overflow-y: scroll;
+}
+
+    #loa div a {
+        margin-top: 7px;
+    }
+
+
+table tr th a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    table tr th a:hover span {
+        color: #11B8D5;
+    }
+
+.table-hor {
+    overflow-x: scroll;
+}
+
+
+#filter {
+    margin-top: 30px;
+    width: auto;
+    background-color: white;
+}
+
+    #filter input {
+        margin: 10px;
+        padding-right: 20px;
+    }
+
+#left-panel {
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-top: 70px;
+    width: 300px;
+    position: fixed;
+}
+
+.vsplitter {
+    left: 399px;
+    color: #171B65;
+}
+
+#right-panel {
+    min-height: inherit;
+    background-color: white;
+    width: auto;
+}
+
+#footer {
+}
+/* scrollbar style*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+    }
+
+/*Bootstrap change*/
+
+
+
+#menu ul .active, #header div nav, .container-fluid, .navbar-nav, .navbar-default,
+#menu ul li a, #menu ul li a:hover, .navbar-fixed-top {
+    color: #11B8D5;
+    background-color: #171B65;
+}
+
+#menu ul li a {
+    color: white;
+    padding-top: 10px !important;
+}
+
+.navbar-brand img {
+    margin-right: 200px;
+    margin-left: 18px;
+    margin-top: 0px;
+}
+
+
+
+.navbar-header {
+    background-color: #EEEEEE;
+}
+
+.nav-tabs li a:hover {
+    background-color: white;
+}
+
+/*Decresasing height of header*/
+.navbar-nav > li > a, .navbar-brand {
+    padding-top: 5px !important;
+    padding-bottom: 0 !important;
+    height: 40px;
+}
+
+.navbar, #header {
+    height: 40px !important;
+}
+
+.tab-content {
+    padding-left: 30px;
+}
+
+.paging {
+    padding-right: 28px;
+}
+
+.vsplitter.right_panel {
+    visibility: hidden;
+}
+
+.infoBlocks{
+    margin-left: 20px;
+}
+
+.dateFormater p {
+    width: 500px;
+    margin-left: 20px;
+}
+
+#AssessmentFormContent {
+    position: relative;
+    top: 20px;
+    width: 800px;
+}
+
+
+
+#leftBlock {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 500px;
+}
+
+#Statistics{
+    margin-top:83px;
+}
+#statisticsOnHide input{
+    width: 50px;
+}
+#statisticsOnHide td{
+    width: 50px;
+}
+#feedbackOnHide input{
+    width: 50px;
+}
+#feedbackOnHide td{
+    width: 50px;
+}
+#rightBlock {
+    position: absolute;
+    top: 30px;
+    left: 470px;
+    width: 400px;
+    height: 400px;
+}
+
+ul.hr li{
+    display: inline;
+    padding: 3px;
+}
+
+table.AssessmentFormTable th {
+    width: 150px;
+}
+
+table.AssessmentFormTable td {
+    width: 200px;
+}
+
+
+h3 {
+    text-align: center;
+}
+#AssessmentFormContent textarea{
+    border-radius:10px;
+}
+#AssessmentFormContent td{
+     border-radius:10px;
+}
+#AssessmentFormContent th{
+     border-radius:10px;
+}
+table.AssessmentFormTable {
+    margin-left: 20px;
+    border-collapse: separate;
+    border-spacing: 20px 5px;
+}
+
+.AssessmentFormTable input {
+    background-color: inherit;
+    width: 200px;
+    text-align: right;
+    border: none;
+    border-radius:10px;
+}
+
+
+.AssessmentFormTable tr:hover {
+    background: #EEEFEC; /* Цвет фона при наведении */
+}
+
+.AssessmentFormTable input:hover {
+    background: #EEEFEC; /* Цвет фона при наведении */
+}
+
+
+
+#descriptionInput {
+    width: 400px;
+    height: 100px;
+    text-align: left;
+    border-color: lightgray;
+}
+
+#areaBlock {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    width: 220px;
+    cursor: pointer;
+}
+
+#indicatorsBlock {
+    position: absolute;
+    top: 70px;
+    left: 230px;
+    width: 710px;
+}
+
+#indicatorsScoreBlock {
+    position: absolute;
+    top: 70px;
+    left: 560px;
+    width: 200px;
+    font-size: 12px;
+    font-style: normal;
+}
+
+#commentBlock {
+    position: absolute;
+    top: 70px;
+    left: 760px;
+    width: 90px;
+    font-size: 12px;
+}
+
+.indicator {
+    display: inline-block;
+    color: #444;
+    border: 1px solid #CCC;
+    /*background:#DDD;*/
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 350px;
+    padding: 5px;
+    text-align: left;
+}
+
+    .indicator:active {
+        color: red;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+        background-color: lavenderblush;
+    }
+
+h4 {
+    text-align: center;
+}
+
+.uhead {
+    text-align: center;
+}
+
+.chru {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+#indicatorComment {
+    width: 220px;
+    height: 250px;
+    border: none;
+}
+
+.noborder {
+    border: none;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
+    -moz-box-sizing: border-box; /* FF1+ */
+    box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+}
+
+/* Tooltip */
+.test + .tooltip > .tooltip-inner {
+    background-color: #73AD21;
+    color: #FFFFFF;
+    border: 1px solid green;
+    padding: 5px;
+    font-size: 14px;
+}
+/* Tooltip on top */
+.test + .tooltip.top > .tooltip-arrow {
+    border-top: 5px solid green;
+}
+/* Tooltip on bottom */
+.test + .tooltip.bottom > .tooltip-arrow {
+    border-bottom: 5px solid blue;
+}
+/* Tooltip on left */
+.test + .tooltip.left > .tooltip-arrow {
+    border-left: 5px solid red;
+}
+/* Tooltip on right */
+.test + .tooltip.right > .tooltip-arrow {
+    border-right: 5px solid black;
+}
+
+.errorBlock {
+    display: table;
+    height: 30%;
+    margin: 5%;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 1em;
+}
+
+.errorImageBlock {
+    float: left;
+}
+
+.errorInfoBlock {
+    float: left;
+    text-wrap: normal;
+    overflow: auto;
+    width: auto;
+}
+
+/*By Vitalik Halamay*/
+
+.mainDiv {
+    padding: 25px;
+    padding-top: 0px;
+}
+
+.paging {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.leftItems {
+    font-size: 16px;
+    background-color: white;
+    color: #171B65;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #171B65;
+}
+
+    .leftItems:hover {
+        background-color: #171B65;
+        color: #11B8D5;
+    }
+
+.leftItemsChosen {
+    font-size: 16px;
+    background-color: white;
+    color: #171B65;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #171B65;
+    background-color: #11B8D5;
+    color: #171B65;
+}
+
+    .leftItemsChosen:hover {
+        cursor: default;
+        background-color: #11B8D5;
+        color: #171B65;
+    }
+
+
+
+.assessPanelDiv {
+    padding: 5px;
+    background-color: #11B8D5;
+}
+
+.assessPanel {
+    display: inline-block;
+    padding: 3px;
+    font-size: 16px;
+    color: white;
+    margin-right: 20px;
+}
+
+    .assessPanel:hover {
+        color: #171B65;
+        cursor:pointer;
+    }
+
+.assessPanelChosen {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 3px;
+    font-size: 16px;
+}
+
+    .assessPanelChosen:hover {
+        color: white;
+        cursor: default;
+        color: #171B65;
+    }
+
+.centerSS {
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    margin: 20px auto;
+}
+
+.tableSS {
+    margin: 5px 20px 0 4px;
+    border: 2px solid #171B65;
+    border-radius: 5px;
+    border-collapse: separate;
+    text-align: left;
+}
+
+    .tableSS th {
+        padding: 8px;
+        color: #11B8D5;
+        text-align: center;
+        background-color: #171B65;
+    }
+
+    .tableSS td {
+        border-top: 2px solid #171B65;
+        padding: 6px;
+        padding-left: 10px;
+    }
+
+    .tableQR tr:last-child {
+        border-top: 2px solid #171B65;
+        color: #11B8D5;
+        background-color: #ccc  /*#171B65*/ ;
+        padding: 6px;
+        padding-left: 10px;
+        font-weight: 800;
+    }
+
+.Ahead h1 {
+    padding: 10px 10px 0 10px;
+}
+
+.tableSS tr {
+    color: #171B65;
+}
+
+    .tableSS tr:nth-child(odd) {
+        color: black;
+    }
+
+    .tableSS tr:hover {
+        background-color: #ccc;
+    }
+
+.tableSS ul {
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+#searchP {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#leftHead {
+    height: 90px;
+    width: 280px;
+}
+
+.chosenAss {
+    background-color: #11B8D5;
+    margin: 5px 10px 10px 0px;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px;
+    cursor: default;
+    border: 1px solid #171B65;
+    font-size: 16px;
+    color: #171B65;
+}
+
+    .chosenAss b {
+        font-size: 18px;
+        color: white;
+    }
+
+.assess {
+    background-color: white;
+    margin: 5px 10px 10px 0px;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #171B65;
+    font-size: 16px;
+    color: #171B65;
+}
+
+    .assess:hover {
+        background-color: #171B65;
+        color: #11B8D5;
+    }
+
+        .assess:hover b {
+            color: white;
+        }
+
+    .assess b {
+        word-break: normal;
+        font-size: 18px;
+        color: #11B8D5;
+    }
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+    .icon-addon:after,
+    .icon-addon:before {
+        display: table;
+        content: " ";
+    }
+
+    .icon-addon:after {
+        clear: both;
+    }
+
+    .icon-addon.addon-md .glyphicon,
+    .icon-addon .glyphicon,
+    .icon-addon.addon-md .fa,
+    .icon-addon .fa {
+        position: absolute;
+        z-index: 2;
+        left: 10px;
+        font-size: 14px;
+        width: 20px;
+        margin-left: -2.5px;
+        text-align: center;
+        padding: 10px 0;
+        top: -1px;
+    }
+
+    .icon-addon.addon-lg .form-control {
+        line-height: 1.33;
+        height: 46px;
+        font-size: 18px;
+        padding: 10px 16px 10px 40px;
+    }
+
+    .icon-addon.addon-sm .form-control {
+        height: 30px;
+        padding: 5px 10px 5px 28px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .icon-addon.addon-lg .fa,
+    .icon-addon.addon-lg .glyphicon {
+        font-size: 18px;
+        margin-left: 0;
+        left: 11px;
+        top: 4px;
+    }
+
+    .icon-addon.addon-md .form-control,
+    .icon-addon .form-control {
+        padding-left: 30px;
+        float: left;
+        font-weight: normal;
+    }
+
+    .icon-addon.addon-sm .fa,
+    .icon-addon.addon-sm .glyphicon {
+        margin-left: 0;
+        font-size: 12px;
+        left: 5px;
+        top: -1px;
+    }
+
+    .icon-addon .form-control:focus + .glyphicon,
+    .icon-addon:hover .glyphicon,
+    .icon-addon .form-control:focus + .fa,
+    .icon-addon:hover .fa {
+        color: #2580db;
+    }
+
+.criteriaDone {
+    background-color: white;
+    cursor: pointer;
+}
+
+    .criteriaDone:hover {
+        background-color: #171B65;
+        color: white;
+    }
+
+        .criteriaDone:hover b {
+            color: white;
+        }
+
+    .criteriaDone b {
+        font-size: 18px;
+        color: #11B8D5;
+    }
+
+.criteriaNotDone {
+    background-color: white;
+    cursor: pointer;
+    color: orangered;
+}
+
+    .criteriaNotDone:hover {
+        background-color: #171B65;
+        color: white;
+    }
+
+        .criteriaNotDone:hover b {
+            color: white;
+        }
+
+    .criteriaNotDone b {
+        font-size: 18px;
+        color: #11B8D5;
+    }
+
+.chosenCriteria {
+    background-color: #11B8D5;
+    cursor: default;
+    color: white;
+    font-weight: 500;
+}
+
+    .chosenCriteria b {
+        font-size: 18px;
+        color: white;
+    }
+
+    .chosenCriteria:hover {
+        background-color: #171B65;
+        color: white;
+    }
+
+.tableAttachments th, .tableAttachments td {
+    text-align:left;
+}
+
+
+.add-attachment-panel {
+    width: 30%;
+    margin-left: 5px;
+}
+
+    .add-attachment-panel > .panel-heading > button {
+        width: 100%;
+        height: 100%;
+    }
+
+    .add-attachment-panel > .panel-body > textarea {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .add-attachment-panel > .panel-body > label {
+        margin-top: 1em;
+    }
+
+input[type='file'] {
+  color: transparent;
+}
+
+.file-drop-area {
+    margin-bottom: 5px;
+    border: 2px solid;
+    border-radius: 0.5em;
+    border-color: lightgray;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+.drop-default {
+    border-color: lightgray;
+}
+
+.drop-loaded {
+    border-color: blue;
+}
+
+.drop-wrong {
+    border-color: red;
+}
+
+.file-drop-area > div, .file-drop-area > table {
+    width: 100%;
+    height: 100%;
+}
+
+.admin {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.decimalNumber {
+  text-align: right;
+  padding-right: 6px;
+}  
+
+.

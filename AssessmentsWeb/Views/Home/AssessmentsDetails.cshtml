@@ -1,0 +1,13 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<div ng-app="Assessments" ng-controller="AssessmentDetailController" ng-repeat="x in assessmentDetails">
+    <h1>Assessments Details</h1>
+    <p>Name: {{x.Name}} </p>
+    <p>Project Manager: {{x.ProjectManager}}</p>
+    <p>Team Lead: {{x.Techead}}</p>
+</div>
+      
+

@@ -1,0 +1,95 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentsWebApi", "AssessmentsWebApi\AssessmentsWebApi.csproj", "{AEA74A7C-107B-4B0D-9B60-751305364D9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentModel", "AssessmentModel\AssessmentModel.csproj", "{1C92B19C-841F-490B-B7EF-C5F6894E2E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentsWeb", "AssessmentsWeb\AssessmentsWeb.csproj", "{FF03BB98-CF66-40D2-85BF-84357F36FDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentServices", "AssessmentServices\AssessmentServices.csproj", "{A36D76F6-A139-4F3B-9EC8-F31E6DACF5C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentServices.Tests", "AssessmentServices.Tests\AssessmentServices.Tests.csproj", "{B4D811EC-5DD2-4112-B377-1CE6B650C4DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{217AE618-26C2-4803-9D94-60435169BF26}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentsWeb.Tests", "AssessmentsWeb.Tests\AssessmentsWeb.Tests.csproj", "{817C30B5-7667-4A35-8209-E97D9126240A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF03BB98-CF66-40D2-85BF-84357F36FDE7} = {FF03BB98-CF66-40D2-85BF-84357F36FDE7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentWebAPI.Tests", "AssessmentWebAPI.Tests\AssessmentWebAPI.Tests.csproj", "{F32C5552-3776-4ED9-8C2E-E820FC7FE325}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs12:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AssessmentsWebApi\\AssessmentsWebApi.csproj
+		SccProjectName1 = AssessmentsWebApi
+		SccLocalPath1 = AssessmentsWebApi
+		SccProjectUniqueName2 = AssessmentModel\\AssessmentModel.csproj
+		SccProjectName2 = AssessmentModel
+		SccLocalPath2 = AssessmentModel
+		SccProjectUniqueName3 = AssessmentsWeb\\AssessmentsWeb.csproj
+		SccProjectName3 = AssessmentsWeb
+		SccLocalPath3 = AssessmentsWeb
+		SccProjectUniqueName4 = AssessmentServices\\AssessmentServices.csproj
+		SccProjectName4 = AssessmentServices
+		SccLocalPath4 = AssessmentServices
+		SccProjectUniqueName5 = AssessmentServices.Tests\\AssessmentServices.Tests.csproj
+		SccProjectName5 = AssessmentServices.Tests
+		SccLocalPath5 = AssessmentServices.Tests
+		SccProjectUniqueName6 = AssessmentsWeb.Tests\\AssessmentsWeb.Tests.csproj
+		SccProjectName6 = AssessmentsWeb.Tests
+		SccLocalPath6 = AssessmentsWeb.Tests
+		SccProjectUniqueName7 = AssessmentWebAPI.Tests\\AssessmentWebAPI.Tests.csproj
+		SccProjectName7 = AssessmentWebAPI.Tests
+		SccLocalPath7 = AssessmentWebAPI.Tests
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEA74A7C-107B-4B0D-9B60-751305364D9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA74A7C-107B-4B0D-9B60-751305364D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA74A7C-107B-4B0D-9B60-751305364D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA74A7C-107B-4B0D-9B60-751305364D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C92B19C-841F-490B-B7EF-C5F6894E2E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C92B19C-841F-490B-B7EF-C5F6894E2E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C92B19C-841F-490B-B7EF-C5F6894E2E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C92B19C-841F-490B-B7EF-C5F6894E2E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF03BB98-CF66-40D2-85BF-84357F36FDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF03BB98-CF66-40D2-85BF-84357F36FDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF03BB98-CF66-40D2-85BF-84357F36FDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF03BB98-CF66-40D2-85BF-84357F36FDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36D76F6-A139-4F3B-9EC8-F31E6DACF5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36D76F6-A139-4F3B-9EC8-F31E6DACF5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36D76F6-A139-4F3B-9EC8-F31E6DACF5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36D76F6-A139-4F3B-9EC8-F31E6DACF5C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D811EC-5DD2-4112-B377-1CE6B650C4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D811EC-5DD2-4112-B377-1CE6B650C4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D811EC-5DD2-4112-B377-1CE6B650C4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D811EC-5DD2-4112-B377-1CE6B650C4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817C30B5-7667-4A35-8209-E97D9126240A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817C30B5-7667-4A35-8209-E97D9126240A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817C30B5-7667-4A35-8209-E97D9126240A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817C30B5-7667-4A35-8209-E97D9126240A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32C5552-3776-4ED9-8C2E-E820FC7FE325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32C5552-3776-4ED9-8C2E-E820FC7FE325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32C5552-3776-4ED9-8C2E-E820FC7FE325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32C5552-3776-4ED9-8C2E-E820FC7FE325}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

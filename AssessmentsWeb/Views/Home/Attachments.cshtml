@@ -1,0 +1,110 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+
+
+@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+@Scripts.Render("~/Scripts/Directives")
+
+<div class="mainDiv" ng-controller="AttachmentsController">
+
+    <h3>Attachments of {{assessmentName}}</h3>
+
+    <div class="panel panel-default add-attachment-panel" ng-show="onFileUpload">
+        <h3>Uploading file...</h3>
+    </div>
+
+    <div ng-hide="onFileUpload" class="panel panel-default add-attachment-panel">
+
+        <div class="panel-heading">
+            <button ng-click="triggerAddPanel()" ng-class="{'active' : addPanelActive}" class="btn btn-primary btn">
+                <span class="glyphicon glyphicon-plus">
+                </span>
+                New Attachment
+            </button>
+        </div>
+
+        <div ng-show="addPanelActive" class="panel-body">
+
+            <label for="File">File (max size: {{maxSize | filesize}}):</label>
+
+            <div id="dropZone" class="file-drop-area"
+                 ng-class="{'drop-default' : dragAreaState == 'default',
+                            'drop-loaded': dragAreaState == 'loaded',
+                            'drop-wrong': dragAreaState == 'file-too-big' || dragAreaState == 'cannot-upload'}">
+
+                <div ng-show="dragAreaState == 'default'">
+                    <h4>Drop your file here.</h4>
+                </div>
+                <div ng-show="dragAreaState == 'file-too-big'">
+                    <h4>File is too big!</h4>
+                    <h5>(choose another file)</h5>
+                </div>
+                <div ng-show="dragAreaState == 'cannot-upload'">
+                    <h4>Can't load file!</h4>
+                    <h5>(choose another file)</h5>
+                </div>
+                <div ng-show="dragAreaState == 'loaded'">
+                    <table class="table">
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{file.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Size:</td>
+                            <td>{{file.size | filesize}}</td>
+                        </tr>
+                    </table>
+                    <button class="btn" ng-click="clearAddForm()">Cancel</button>
+                </div>
+            </div>
+
+            <input id="upload" type="file" onchange="angular.element(this).scope().setFile(this)" ng-model="file">
+
+            <label for="Comment">Comment:</label>
+            <br />
+            <textarea ng-model="comment" maxlength="200" />
+
+            <div class="pull-right">(Symbols: {{200 - comment.length}})</div>
+        </div>
+
+        <div ng-show="addPanelActive" class="panel-footer">
+            <button class="btn btn-primary" ng-class="{'disabled' : dragAreaState !='loaded'}" ng-click="addAttachment()">Add</button>
+            <button class="btn btn-default" ng-class="{'disabled' : dragAreaState != 'loaded' && !comment}" ng-click="clearAddForm()">Clear</button>
+        </div>
+    </div>
+
+
+    <div>
+        <table class="tableSS tableAttachments" ng-show="attachments.length">
+            <thead>
+                <tr>
+                    <th class="col-md-4">File Name</th>
+                    <th class="col-md-2">Size</th>
+                    <th class="col-md-5">Comment</th>
+                    <th class="col-md-1">
+                        <div class="btn" ng-click="reloadAttachments()">
+                            <span class=" glyphicon glyphicon-refresh"></span> Refresh
+                        </div>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="attachment in attachments">
+                    <td><a href="" ng-click="downloadFile(attachment.Name)">{{attachment.Name}}</a></td>
+                    <td>{{attachment.Size | filesize}}</td>
+                    <td>{{attachment.Comment}}</td>
+                    <td>
+                        <button class="btn btn-default btn-sm" ng-click="openDeleteConfirmWindow(attachment.Id)">
+                            <span class="glyphicon glyphicon-remove"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 ng-hide="attachments.length">No attachments for this assessment.</h3>
+    </div>
+</div>

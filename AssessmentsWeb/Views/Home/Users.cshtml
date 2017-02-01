@@ -1,0 +1,69 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<div ng-app="Assessments" ng-controller="UsersController">
+
+    
+       
+        <input name="search" type="text" ng-model="search" placeholder="Search">
+  
+    <div ng-show="search.length==0">
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Login</th>
+                    <th>Coordinator</th>
+                    <th>CM</th>
+                    <th>SSE ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in Users">
+                    <td>{{user.Id}}</td>
+                    <td class="col-lg-5"> <textarea rows="1" class="noborder" ng-model="user.Name" ng-blur="Update(user)" /></td>
+                    <td class="col-lg-5">{{user.Login}}</td>
+                    <td ><input type="checkbox" ng-model="user.IsCoordinator" ng-checked="{{user.IsCoordinator}}" ng-click="Update(user)"><br></td>
+                    <td><input type="checkbox" ng-model="user.IsCompetenceManager" ng-checked="{{user.IsCompetenceManager}}" ng-click="Update(user)"><br></td>
+                    <td class="col-lg-2"> <textarea rows="1" onkeyup="this.value=this.value.replace(/[^\d\.]+/g,'')" class="noborder" ng-model="user.SSE_Id" ng-blur="Update(user)" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div>
+            <ul class="pagination">
+                <li ng-repeat="page in ArrayOfPages" ng-click="showPage(page.link)" ng-class="{'active': currentPage() == page.link}">
+                    <a>{{page.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div ng-show="search.length!=0">
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Login</th>
+                    <th>Coordinator</th>
+                    <th>CM</th>
+                    <th>SSE ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in AllUsers | filter: search">
+                    <td>{{user.Id}}</td>
+                    <td class="col-lg-5"> <textarea rows="1" class="noborder" ng-model="user.Name" ng-blur="Update(user)" /></td>
+                    <td class="col-lg-5">{{user.Login}}</td>
+                    <td><input type="checkbox" ng-model="user.IsCoordinator" ng-checked="{{user.IsCoordinator}}" ng-click="Update(user)"><br></td>
+                    <td><input type="checkbox" ng-model="user.IsCompetenceManager" ng-checked="{{user.IsCompetenceManager}}" ng-click="Update(user)"><br></td>
+                    <td class="col-lg-2"> <textarea rows="1" onkeyup="this.value=this.value.replace(/[^\d\.]+/g,'')" class="noborder" ng-model="user.SSE_Id" ng-blur="Update(user)" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

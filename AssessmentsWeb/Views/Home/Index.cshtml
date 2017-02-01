@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/JQuery/splitter.script.js"></script>
+<script src="~/Scripts/JQuery/jquery.splitter-0.14.0.js"></script>
+
+<div id="main-content" class="col-md-12">
+    <div id="left-panel" class="">
+        <nav ng-controller="UIRouterController">
+            <div ng-if="include === 'listingPage'">
+                <div ng-controller="ListingPageController" ng-include="'/Home/AssessmentsList'"></div>
+            </div>
+            <div ng-if="include === 'addAssessment'">
+                <div ng-controller="AddAssessmentController" ng-include="'/Home/AddAssessment'"></div>
+            </div>
+        </nav>
+    </div>
+    <div id="right-panel">
+        <ul class="assessPanelDiv" ng-controller="ListingPageController" ng-click="getCurrentProjectID()">
+            <li id="Form" class="assessPanel" ui-sref="Form ({ Id: currentProjectID })">Assessment Form</li>
+            <li id="FillAssessment" class="assessPanel" ui-sref="FillAssessment ({ Id: currentProjectID })">Fill Assessment</li>
+            <li id="StrongAreas" class="assessPanel" ui-sref="Strong Areas ({ Id: currentProjectID })">Strong Areas</li>
+            <li id="WeakAreas" class="assessPanel" ui-sref="Weak Areas ({ Id: currentProjectID })">Weak Areas</li>
+            <li id="Recommendations" class="assessPanel" ui-sref="Recommendations ({ Id: currentProjectID })">Recommendations</li>
+            <li id="ActionItems" class="assessPanel" ui-sref="Action Items ({ Id: currentProjectID })">Action Items</li>
+            <li id="Attachments" class="assessPanel" ui-sref="Attachments ({ Id: currentProjectID })">Attachments</li>
+            <li id="Export" class="assessPanel" ui-sref="Form ({ Id: currentProjectID })" ng-click="export()">Export to Excel</li>
+        </ul>
+
+        <div ui-view>
+
+        </div>
+
+    </div>
+</div>
+
+
+

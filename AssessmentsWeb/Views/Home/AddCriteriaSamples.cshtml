@@ -1,0 +1,37 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<form ng-app="Assessments" >
+
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <input ng-model="Crit.Name" type="text" class="form-control" id="Name">
+        <p></p>
+
+        <label for="Scope">Scope:</label>
+        <select ng-model="Crit.ScopeConstraintImpactId" ng-options="Impact.Id as Impact.Name for Impact in Impacts"
+                class="form-control"></select>
+
+        <label for="Time">Time:</label>
+        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts"
+                ng-model="Crit.TimeConstraintImpactId" class="form-control"></select>
+
+        <label for="Quality">Quality:</label>
+        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts"
+                ng-model="Crit.QualityConstraintImpactId" class="form-control"></select>
+
+        <label for="Cost">Cost:</label>
+        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts"
+                ng-model="Crit.CostConstraintImpactId" class="form-control"></select>
+       
+
+        <p></p>
+        <button ng-click="postJson();closeThisDialog(0);">Save</button>
+        <button ng-click="closeThisDialog(0)">Close</button>
+        <hr />
+
+
+    </div>
+</form>
+
+

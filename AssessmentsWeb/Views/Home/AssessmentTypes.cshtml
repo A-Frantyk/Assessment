@@ -1,0 +1,36 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<div ng-app="Assessments" ng-controller="AssessmentTypeController">
+
+    <div class="mainDiv">
+        <p> </p>
+        <button class="btn btn-primary" ng-click="startForm()"><span class="glyphicon glyphicon-plus"></span> Add type</button>
+        </div>
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>URL</th>
+
+                    <th> </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="type in types">
+                    <td>{{type.Id}}</td>
+                    <td class="col-lg-4"><textarea class="noborder" rows="1" ng-model="type.Name" ng-blur="Update(type)" /></td>
+                    <td class="col-lg-4"><textarea class="noborder" rows="1" ng-model="type.Description" ng-blur="Update(type)" /></td>
+                    <td class="col-lg-4"><textarea class="noborder" rows="1" ng-model="type.URL" ng-blur="Update(type)" /></td>
+
+                    <td title="Areas"><a ui-sref="Areas({ Id: {{type.Id}} })"><span class="glyphicon glyphicon-share-alt"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+

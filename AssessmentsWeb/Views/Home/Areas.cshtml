@@ -1,0 +1,39 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<div  ng-app="Assessments" ng-controller="AreasController">
+    <div class="mainDiv">
+        <p>Assessment Type:<a ui-sref="Types"> {{ass.Name}}</a></p>
+
+
+        <button class=" btn btn-primary" ng-click="startFormAdd()"><span class="glyphicon glyphicon-plus"></span> Add area</button>
+    </div>
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+                <tr ng-repeat="area in Areas | orderBy:'Order'">
+                    <td>{{area.Id}}</td>
+                    <td class="col-lg-6"><textarea class="noborder" rows="1" ng-model="area.Name" ng-blur="Update(area)" /></td>
+                    <td class="col-lg-6"><textarea class="noborder" rows="1" ng-model="area.Description" ng-blur="Update(area)" /></td>
+                    <td title="Criteria"><a ui-sref="CriteriaSamples({ Id: {{area.Id}} })"><span class="glyphicon glyphicon-share-alt"></span></a></td>
+
+                    <td ng-click="Up(area)"><span class="glyphicon glyphicon-chevron-up"></span></td>
+                    <td ng-click="Down(area)"><span class="glyphicon glyphicon-chevron-down"></span></td>
+                    <td><button class="btn btn-default btn-sm" ng-click="startForm(area)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+

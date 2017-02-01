@@ -1,0 +1,28 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+
+<div class="mainDiv" ng-app="Assessments" ng-controller="StrongAreasController">
+    <div ng-show="Areas.length">
+
+        <h3 ng-show="Assessment.length">{{Assessment}}</h3>
+
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Criteria</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="a in Areas">
+                <tr ng-repeat="c in a.CriteriaAndScores">
+                    <td class="col-sm-5 col-md-5 col-lg-5 col-xs-5" rowspan="{{a.CriteriaAndScores.length}}" ng-hide="$index>0" title="{{a.Description}}">{{a.Area}}</td>
+                    <td class="col-sm-5 col-md-5 col-lg-5 col-xs-5">{{c.Criterion}}</td>
+                    <td class="col-sm-5 col-md-5col-lg-5 col-xs-5"> {{c.Score}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 ng-show="Areas.length == 0">No Information</h3>
+</div>

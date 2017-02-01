@@ -1,0 +1,5 @@
+D:\LV-175.Net\Assessment\AssessmentsWeb.Tests\bin\Debug\AssessmentsWeb.Tests.dll
+D:\LV-175.Net\Assessment\AssessmentsWeb.Tests\bin\Debug\AssessmentsWeb.Tests.pdb
+D:\LV-175.Net\Assessment\AssessmentsWeb.Tests\obj\Debug\AssessmentsWeb.Tests.csprojResolveAssemblyReference.cache
+D:\LV-175.Net\Assessment\AssessmentsWeb.Tests\obj\Debug\AssessmentsWeb.Tests.dll
+D:\LV-175.Net\Assessment\AssessmentsWeb.Tests\obj\Debug\AssessmentsWeb.Tests.pdb

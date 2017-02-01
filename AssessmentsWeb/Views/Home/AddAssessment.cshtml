@@ -1,0 +1,53 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<link href="~/Content/select2.css" rel="stylesheet" />
+<link href="~/Content/select.min.css" rel="stylesheet" />
+<link href="~/Content/select.css" rel="stylesheet" />
+
+<form ng-app="Assessments" ng-controller="AddAssessmentController" id="AddDialog" ng-submit="submit()">
+    <div class="form-group">
+        <label for="AssessmentType">Assessment Type:</label>
+        <select class="form-control" id="AssessmentType"
+                ng-options="type.Id as type.Name for type in assessmentTypeObj"
+                ng-model="assessment.assessmentTypeId" required></select>
+
+        <label for="Name">Name of Assessment:</label>
+        <input ng-model="assessment.name" type="text" class="form-control" id="Name" required>
+        <p></p>
+
+        <label for="StartDate">Start Date:</label>
+        <p></p>
+        <input ng-model="assessment.startDate" type="date" name="StartDate" required>
+        <p></p>
+
+        <label for="Project">Project:</label>
+        <input ng-model="assessment.project" type="text" class="form-control" id="Project" required>
+
+
+        <label for="Unit">Unit:</label>
+        <input ng-model="assessment.unit" type="text" class="form-control" id="Unit" required>
+
+        <label for="ProjectManager">Project Manager:</label>
+        <select style="width:300px;" id="ProjectManager" ui-select2=""
+                ng-options="pm.Id as pm.Name for pm in usersObj"
+                ng-model="assessment.projectManagerId">
+            <option ng-repeat="pm.Id" required>{{pm.Name}}</option>
+        </select>
+
+        <label for="Coordinator">Coordinator:</label>
+        <select style="width:300px;" id="Coordinator" ui-select2=""
+                ng-options="coordinator.Id as coordinator.Name for coordinator in usersObj"
+                ng-model="assessment.coordinatorId">
+            <option ng-repeat="coordinatorId.Id" required>{{coordinatorId.Name}}</option>
+        </select>
+        <p></p>
+        <button type="submit" ng-click="postJson()">
+            Save
+        </button>
+        <button ng-click="closeForm()">
+            Close
+        </button>
+        <hr />
+    </div>
+</form>

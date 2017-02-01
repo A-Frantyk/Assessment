@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment</title>
+    <script src="~/Scripts/SignalR/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/SignalR/jquery.signalR-2.2.0.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/Angular")
+    @Scripts.Render("~/Scripts/Select")
+    @Scripts.Render("~/Scripts/App")
+    @Scripts.Render("~/Scripts/Services")
+    @Scripts.Render("~/Scripts/Directives")
+    @Scripts.Render("~/Scripts/Controllers")
+    @Scripts.Render("~/Scripts/Vendors")
+    @Scripts.Render("~/Scripts/SignalR")
+    <script src="~/signalr/hubs"></script>
+
+</head>
+<body ng-app="Assessments">
+    <div id="wrapper">
+        <div id="header">
+            <div class="col-md-12">
+                <nav>
+                    <div class="navbar-fixed-top">
+                        @{
+                            var b = new byte[2048];
+                            Stream stream = null;
+
+                            try
+                            {
+                                stream = new FileStream(System.Reflection.Assembly.GetExecutingAssembly().Location, FileMode.Open, FileAccess.Read);
+                                stream.Read(b, 0, 2048);
+                            }
+                            finally
+                            {
+                                if (stream != null)
+                                {
+                                    stream.Close();
+                                }
+                            }
+
+                            var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+                            dateTime = dateTime.AddSeconds(BitConverter.ToInt32(b, BitConverter.ToInt32(b, 60) + 8));
+                            dateTime = dateTime.ToLocalTime();
+
+                        }
+
+                        <div class="">
+                            <a class="navbar-brand" ui-sref="Home"><img id="logo" src="~/Images/ss-excellence-midnight-cut.png"></a>
+                        </div>
+                        <div id="menu" class="container-fluid">
+                            <ul class="nav navbar-nav navbar-default">
+                                <li> <a id="ASSESSMENTS" href="/#">ASSESSMENTS</a> </li>
+                                <li> <a id="ANALYTICS" href="/Home/Analytics#/Home/Reports">ANALYTICS</a> </li>
+                                <li> <a id="ADMINISTRATION" href="/Home/Administration#/Home/Users">ADMINISTRATION</a> </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right navbar-btn">
+                                <li>
+                                    Release - @dateTime
+                                </li>
+                                <li>
+                                    &nbsp; @ViewBag.CurrentUser
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

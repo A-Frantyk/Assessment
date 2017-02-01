@@ -1,0 +1,35 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+<div ng-controller="ListingPageController">
+
+    <div id="leftHead">
+        
+        <div class="form-group">
+            <div class="icon-addon addon-md">
+                <input type="text" placeholder="Search" class="form-control" id="search" ng-model="text" ng-change="searching(text)">
+                <label for="search" class="glyphicon glyphicon-search" rel="tooltip" title="search"></label>
+            </div>
+        </div>
+
+        <a class="col-lg-8 btn btn-primary" ng-controller="AddAssessmentController" ng-click="startForm()"><span class="glyphicon glyphicon-plus"></span>Add Assessment</a>
+
+
+    </div>
+    <div ng-show="assessments.length">
+        <p id="searchP">Assessments: {{assessments.length}}</p>
+        <div id="loa">
+            <div id={{assessment.Id}} class="assess" ng-repeat="assessment in assessments" ng-click="setCurrentProjectID(assessment.Id);">
+                <ul class="list-unstyled">
+                    <li><b>{{assessment.Name}}</b></li>
+                    <li ng-show="assessment.StartDate">Start Date: {{assessment.StartDate | date:'yyyy-MM-dd'}}</li>
+                    <li ng-show="assessment.Coordinator">Coordinator: {{assessment.Coordinator}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-show="assessments.length == 0">
+        <h4>No assessments found for query "{{text}}"</h4>
+    </div>
+</div>
+
+

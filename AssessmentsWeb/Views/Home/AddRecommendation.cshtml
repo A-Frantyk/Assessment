@@ -1,0 +1,21 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<form ng-app="Assessments" ng-controller="AddRecommendationController" ng-submit="submit()">
+    <div class="form-group">
+        <label for="Criterion">Criterion:</label>
+        <select class="form-control" id="Criterion"
+                ng-options="criterion.Id as criterion.Name for criterion in Criteria"
+                ng-model="CriterionId" required></select>
+        <p></p>
+        <label for="Text">Text of Recommendation:</label><p></p>
+        <textarea rows="4" ng-model="Text" class="form-control" id="Text" required />
+        <p></p>
+        <label for="Benefits">Benefits:</label><p></p>
+        <textarea rows="3" ng-model="Benefits" class="form-control" name="Benefits" />
+        <p></p>
+        <hr />
+        <button ng-controller="RecommendationsController" type="submit">Save</button>
+        <button ng-click="closeThisDialog(0)">Close</button>
+    </div>
+</form>

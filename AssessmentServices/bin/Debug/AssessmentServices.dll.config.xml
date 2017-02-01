@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
+  </configSections>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v11.0"/>
+      </parameters>
+    </defaultConnectionFactory>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"/>
+    </providers>
+  </entityFramework>
+ <!-- *********************** Start connectionStrings specifications ************************** -->
+  <!-- If you want to use local database server you have to clear comment brackets 
+       from the 1-nd code block typed below  and to comment 2-nd block -->
+  <!-- If you want to use remote database server you have to clear comment brackets 
+       from the 2-st code block typed below and to comment 1-st block -->
+  <!-- 1. Remote Database Server -->
+  <connectionStrings>
+    <add name="AssessmentModelContext" connectionString="data source=ssu-sql12.training.local\tc;initial catalog=Lv-175-AssessmentDB;persist security info=True;user id=Lv-175.Net;password=Lv-175.Net;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  
+  <!--<connectionStrings>
+    <add name="AssessmentModelContext" 
+         connectionString="data source=Dell-Mark;initial catalog=AssessmentDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" 
+         providerName="System.Data.SqlClient" />
+  </connectionStrings>-->
+  <!-- ************************ End connectionStrings specifications ******************************* -->  
+
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.1"/></startup></configuration>

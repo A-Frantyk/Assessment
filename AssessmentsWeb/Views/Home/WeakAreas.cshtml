@@ -1,0 +1,36 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+<div class="mainDiv" ng-app="Assessments" ng-controller="WeakAreasController">
+    <div ng-show="Areas.length">
+
+        <h3 ng-show="Assessment.length">{{Assessment}}</h3>
+
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Criteria</th>
+                    <th colspan=2>Score</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="a in Areas" ng-controller="AddRecommendationController">
+                <tr ng-repeat="c in a.CriteriaAndScores">
+                    <td rowspan="{{a.CriteriaAndScores.length}}" ng-hide="$index > 0" class="col-lg-4" title="{{a.Description}}">
+                        {{a.Area}}
+                    </td>
+                    <td class="col-lg-4">
+                        {{c.Criterion}} <a title="{{c.RecommendationCount}} Recommendation(s)" ng-show="c.RecommendationCount" class="glyphicon glyphicon-ok-circle"></a>
+                    </td>
+                    <td class="col-lg-4">
+                        {{c.Score}}
+                    </td>
+                    <td>
+                        <a ng-click="startForm(c.CriterionId, currentId)" title="New Recommendation" class="glyphicon glyphicon-plus"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 ng-show="Areas.length == 0">No Information</h3>
+</div>

@@ -1,0 +1,45 @@
+.container-fluid{}
+
+#menu ul .active, #header div nav, .container-fluid, .navbar-nav, .navbar-default, 
+#menu ul li a, #menu ul li a:hover{
+    color: #11B8D5;
+    background-color: #171B65;
+}
+
+#menu ul li a{
+    color: white;
+    padding-top:10px !important; 
+}
+
+.navbar-brand img{
+    margin-right: 200px;
+    margin-left: 18px;
+    margin-top: 0px;
+}
+
+
+
+.navbar-header{
+    background-color: #EEEEEE;
+}
+
+.nav-tabs li a:hover{
+    background-color: white;
+}
+
+/*Decresasing height of header*/
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:5px !important; 
+    padding-bottom:0 !important;
+    height: 40px;
+}
+
+.navbar {min-height:40px !important;}
+
+.tab-content{
+    padding-left: 30px;
+}
+
+.paging{
+    padding-right: 28px;
+}

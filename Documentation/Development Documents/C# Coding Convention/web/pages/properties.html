@@ -1,0 +1,35 @@
+<!DCTYPE HTML>
+
+<html>
+<head>
+    <title> Coding Convention C# </title>
+    <meta charset="utf-8">
+    <link href="../css/indexCSS.css" rel="stylesheet">
+    
+    </head>
+
+    <body>
+        <div class="body">
+ <h3> 2.5	Properties, fields, parameters and variables</h3>
+        <p>•	Property name begins with capital letter: JobId (Pascal case).</p>
+<p>•	Use a read-only property when the user cannot change the property's logical data</p> <p>member. Do not use write-only properties.</p>
+<p>•	Field name begins with small letter. If a field is a property's logical data member, it</p> <p>gets the same name as the property (if property name is JobId the field name for this <p>property is jobId).</p>
+<p>•	Do not use fields that are public. A field can be declared as public for a global</p> <p>constant (instead of using property with get accessor). In the last case capitalize the name</p> <p>of the field. </p>
+<p>	Interface classes should not have protected fields.</p>
+<p>•	Local variable names and parameter names begins with small letter. Use camel case.</p>
+<p>•	Name of a constant is capitalized. The concatenated words are separated by “_” sign:</p> <p>APPLICATION_NAME.</p>
+<p>•	Boolean property/field/variable/parameter name should start with prefix “is”, “has” or</p> <p>“does” which implies True/False values (doesFileExist instead of fileExists).</p>
+<p>•	Even for short-lived local variables still use a meaningful name. Use single-character</p> <p>names: ‘i’, ‘j’, ’k’, ’l’, ’m’, ’n’  for loops variables; ‘x’, ‘y’, ‘z' for coordinates; <p>‘r’, ‘g’, ‘b’ for colors, ‘e’ for event argument.</p>
+<p>•	Consider using named constants in conditions instead of numbers. The exceptions are 0,</p> 
+            <p>1 and –1. ( for i=0; i NUM_DAYS_IN_WEEK; i++ instead of for i=0; i<7; i++  ). However it is</p> 
+            <p>possible to use number if it is used in one place only and this does not make sense to </p><p>define it as a constant. In the case a number is used in condition a comment has to be added </p><p>to explain meaning of the number used.</p>
+           <p> •	Avoid using hard coded strings for messages that are displayed to user.</p> <p>Use a named constant, a database record or resource file item instead.</p>
+<p>•	While building strings for custom messages use formatted strings: </p>
+<p>MES_DELETE = "File {0} deleted.";</p>
+            <p>. . . </p>
+            <p>res = String.Format(MES_DELETE, drawFile.Name);</p>
+
+</div>
+        <a href="list.html" > Back to Table List </a>
+    </body>
+</html>

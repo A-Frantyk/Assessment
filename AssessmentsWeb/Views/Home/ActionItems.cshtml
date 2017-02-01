@@ -1,0 +1,31 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+<div class="mainDiv" ng-app="Assessments" ng-controller="ActionItemsController">
+
+    <h3 ng-show="Assessment.length">{{Assessment}}</h3>
+    <div class="panel panel-default add-attachment-panel">
+        <div class="panel-heading">
+            <button ng-click="startForm()" class="btn btn-primary btn" ng-controller="AddActionItemController"><span class="glyphicon glyphicon-plus"></span> New Action Items</button>
+        </div>
+    </div>
+    <table class="tableSS">
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Criteria</th>
+                <th>Action Item</th>
+                <th>Responsible Person</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="ar in Areas">
+                <td class="col-sm-2">{{ar.area}}</td>
+                <td class="col-sm-2">{{ar.criterion}}</td>
+                <td class="col-sm-2">{{ar.actionItem}}</td>
+                <td class="col-sm-2">{{ar.responsiblePerson}}</td>
+                <td class="col-sm-2">{{ar.dueDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

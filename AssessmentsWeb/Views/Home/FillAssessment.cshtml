@@ -1,0 +1,62 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<div class="mainDiv" ng-controller="FillAssessmentController">
+    <div id="areaBlock">
+        <details open ng-repeat="ar in Areas">
+            <summary>
+                {{ar.Name}}
+            </summary>
+
+            <ul>
+                <li ng-repeat="cr in Criteria | filter : {AreaId : ar.Id} : true" ng-click="getIndicators(cr.CriteriaId)">
+                    <a id={{cr.CriteriaId}} class="criteriaDone" ng-if="cr.ScoreLeft == 0 && cr.Choosen==0">{{cr.CriteriaName}}</a>
+                    <a id={{cr.CriteriaId}} class="chosenCriteria" ng-if="cr.ScoreLeft == 0 && cr.Choosen==1">{{cr.CriteriaName}}</a>
+                    <a id={{cr.CriteriaId}} class="criteriaNotDone" ng-if="cr.ScoreLeft > 0 && cr.FirstNotDone==0">{{cr.CriteriaName}}</a>
+                    <a id={{cr.CriteriaId}} class="chosenCriteria" ng-if="cr.ScoreLeft > 0 && cr.FirstNotDone==1">{{cr.CriteriaName}}</a>
+                </li>
+            </ul>
+
+        </details>
+    </div>
+
+    <div id="indicatorsBlock">
+        <div ng-if="Indicators.length == 0"><b>There are no indicators for given criterion!</b></div>
+
+        <table class="table table-condensed table-hover table-responsive">
+            <tbody>
+                <tr ng-repeat="ind in Indicators">
+                    <td ng-if="ind.IndicatorScoreId != 0" width="40%">{{ind.IndicatorName}}</td>
+                    <td ng-if="ind.IndicatorScoreId == 0" class="warning" width="40%">{{ind.IndicatorName}}</td>
+
+                    <td ng-if="ind.IndicatorScoreId != 0" width="26%">
+                        <form>
+                            <label ng-repeat="score in IndicatorScores">
+                                <input type="radio" id="{{score.Id}}" ng-model="ind.IndicatorScoreWeight" ng-value="score.Weight" ng-click="UpdateScore(score.Weight, ind)">
+                                {{score.Name}} <br />
+                            </label>
+                        </form>
+                    </td>
+                    <td ng-if="ind.IndicatorScoreId == 0" class="warning" width="26%">
+                        <form>
+                            <label ng-repeat="score in IndicatorScores">
+                                <input type="radio" id="{{score.Id}}" ng-model="ind.IndicatorScoreWeight" ng-value="score.Weight" ng-click="UpdateScore(score.Weight, ind)">
+                                {{score.Name}} <br />
+                            </label>
+                        </form>
+                    </td>
+
+                    <td ng-if="ind.IndicatorScoreId != 0" width="35%">
+                        <textarea class="noborder" rows="8" ng-model="ind.IndicatorComment" ng-blur="UpdateComment(ind)"></textarea>
+                    </td>
+                    <td ng-if="ind.IndicatorScoreId == 0" class="warning" width="35%">
+                        <textarea class="noborder" rows="8" ng-model="ind.IndicatorComment" ng-blur="UpdateComment(ind)"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

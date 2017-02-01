@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/JQuery/splitter.script.js"></script>
+<script src="~/Scripts/JQuery/jquery.splitter-0.14.0.js"></script>
+
+<div id="main-content" ng-app="Assessments" class="col-md-12">
+    <div id="left-panel" class="">
+        <nav class="" id="">
+            <div class="">
+                <div id="filter" class=" well">
+                    <h5>Filter</h5><input type="search" class="form-control">
+                </div>
+                <div >
+                    <a id="Reports" class="leftItems" ui-sref="Reports">Quarterly Report</a>
+                    <a id="TopWeakAreas" class="leftItems" ui-sref="Top Weak Areas">Top Weak Areas</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="right-panel" class="">
+        <div ui-view></div>
+    </div>
+</div>
+
+
+

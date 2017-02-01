@@ -1,0 +1,23 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<form ng-app="Assessments" >
+
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        <input ng-model="Area.Name" type="text" class="form-control" id="Name">
+        <p></p>
+
+        <label for="Description">Description:</label>
+        <input ng-model="Area.Description" type="text" name="Description" class="form-control" id="Name">
+        <p></p>
+
+        <p></p> 
+        <button ng-click="postJson();closeThisDialog(0);">Save</button>
+        <button ng-click="closeThisDialog(0)">Close</button>
+        <hr />
+
+
+    </div>
+</form>
+

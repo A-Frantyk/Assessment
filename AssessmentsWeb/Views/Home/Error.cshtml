@@ -1,0 +1,14 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<div class="errorBlock" ng-controller="ErrorController">
+    <div class="col-md-4 errorImageBlock">
+        <img src="~/Images/error-smile.png" style="height: 100%; width: 90%">
+    </div>
+    <div class="col-md-8 errorInfoBlock" ng-controller="ErrorController">
+        <h1>{{errorCode + ' ' + errorText}}</h1>
+        <br>
+        <h2>{{errorMessage}}</h2>
+    </div>
+</div>
+

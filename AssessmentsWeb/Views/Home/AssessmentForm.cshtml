@@ -1,0 +1,187 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+@Scripts.Render("~/Scripts/Directives")
+
+
+<div>
+    <div id="AssessmentFormContent">
+
+        <div id="AssessmentFormHeader"><h3>{{assessmentFormData.Name}}</h3> </div>
+
+        <div id="leftBlock">
+            <br />
+            <br />
+            <div>
+                <div class="infoBlocks" onclick="toggle_div_fun('detailsOnHide');" ondblclick="clearSelection()">
+                    <br> <label><a> Details</a></label>
+                </div>
+                <hr />
+
+
+                <div id="detailsOnHide" class="detailsOnHide">
+                    <table class="AssessmentFormTable">
+                        <tr> <th>  Name: </th> <td><input ng-blur="Update()" ng-model="assessmentFormData.Name" ng-readonly="blocked()" type="text" value="{{assessmentFormData.Name}}" /> </td> </tr>
+                        <tr> <th>  Assessment Type: </th> <td style="text-align:right">{{assessmentFormData.AssessmentType}} </td> </tr>
+                        <tr> <th>  Version: </th>  <td><input ng-blur="Update()" ng-model="assessmentFormData.Version" ng-readonly="blocked()" type="text" value="{{assessmentFormData.Version}}" /></td> </tr>
+                        <tr> <th>  Unit:</th> <td><input ng-blur="Update()" ng-model="assessmentFormData.Unit" ng-readonly="blocked()" type="text" value="{{assessmentFormData.Unit}}" /></td> </tr>
+                        <tr> <th>  URL:</th> <td><input ng-blur="Update()" ng-model="assessmentFormData.URL" ng-readonly="blocked()" type="text" value="{{assessmentFormData.URL}}" /></td> </tr>
+                    </table>
+                    <br>
+                    <br />
+                </div>
+            </div>
+         
+
+            <div>
+                <div id="Statistics" class="infoBlocks" onclick="toggle_div_fun('statisticsOnHide');" ondblclick="clearSelection()">
+                    <br> <label><a> Statistics</a></label>
+                </div>
+                <hr />
+
+
+                <div id="statisticsOnHide" class="statisticsOnHide">
+                    <table class="AssessmentFormTable">
+                        <tr> <th>  Improvements:</th> <td><input ng-blur="Update()" ng-model="assessmentFormData.Improvements" ng-readonly="blocked()" type="text" value="{{assessmentFormData.Improvements}}" /></td> </tr>
+                        <tr> <th>  Coordinator Time, h:</th>    <td><input ng-blur="Update()" ng-model="assessmentFormData.CoordinatorTime" ng-readonly="blocked()" type="text" value="{{assessmentFormData.CoordinatorTime}}" /> </td>   </tr>
+                        <tr> <th>  Expert Time, h:     </th>    <td><input ng-blur="Update()" ng-model="assessmentFormData.ExpertTime" ng-readonly="blocked()" type="text" value="{{assessmentFormData.ExpertTime}}" />    </td>   </tr>
+                    </table>
+                    <br>
+                    <br />
+                </div>
+            </div>
+
+            <div>
+
+                <div class="infoBlocks" onclick="toggle_div_fun('datesOnHide');" onmousedown="return false">
+                    <br> <label> <a>Dates </a> </label>
+                </div>
+                <hr />
+                <div id="datesOnHide" class="dateFormater">
+
+                    <p> Start Date:  &nbsp &nbsp <input ng-model="assessmentFormData.StartDate" type="date" name="StartDate" ng-blur="Update()" ng-disabled="blocked()"></p>
+                    <p> Finish Date:  &nbsp <input ng-model="assessmentFormData.FinishDate" type="date" name="FinishDate" ng-blur="Update()" ng-disabled="blocked()"></p>
+
+                    <br />
+                </div>
+            </div>
+
+            <div>
+                <div class="infoBlocks" onclick="toggle_div_fun('feedbackOnHide');" ondblclick="    clearSelection()">
+                    <br> <label><a> Feedback</a></label>
+                </div>
+                <hr />
+
+
+                <div id="feedbackOnHide" class="feedbackOnHide">
+                    <table class="AssessmentFormTable">
+                        <tr> <th>  Service Quality Score:</th> <td><input ng-blur="Update()" ng-model="assessmentFormData.ServiceQualityScore" ng-readonly="blocked()" type="text" value="{{assessmentFormData.ServiceQualityScore}}" /></td> </tr>
+                        <tr> <th>  Improvements:</th>  </tr>
+                    </table>
+                    <textarea ng-blur="Update()" ng-model="assessmentFormData.QCComment" ng-readonly="blocked()" id="descriptionInput" value="{{assessmentFormData.QCComment}}" />
+                    <br>
+                    <br />
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+        <div id="rightBlock">
+            <br />
+            <br />
+            <div>
+                <div class="infoBlocks" onclick="toggle_div_fun('peopleOnHide');" onmousedown="return false">
+                    <br> <label> <a>People </a> </label>
+                </div>
+                <hr />
+
+                <div id="peopleOnHide">
+                    <table class="AssessmentFormTable">
+                        <tr>
+                            <th>  Project Manager: </th>
+                            <td>
+                                <select class="form-control" id="ProjectManager"
+                                        ng-options="projectmanager.Id as projectmanager.Name for projectmanager in AllUsers "
+                                        ng-model="assessmentFormData.ProjectManagerId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>  TechLead:       </th>
+                            <td>
+                                <select class="form-control" id="TechLead"
+                                        ng-options="techlead.Id as techlead.Name for techlead in AllUsers"
+                                        ng-model="assessmentFormData.TechLeadId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>  Coordinator:     </th>
+                            <td>
+                                <select class="form-control" id="Coordinator"
+                                        ng-options="coordinator.Id as coordinator.Name for coordinator in AllUsers | filter: {IsCoordinator: true}"
+                                        ng-model="assessmentFormData.CoordinatorId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>QCLead:</th>
+                            <td>
+                                <select class="form-control" id="QCLead"
+                                        ng-options="qclead.Id as qclead.Name for qclead in AllUsers"
+                                        ng-model="assessmentFormData.QCLeadId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Business Analyst:</th>
+                            <td>
+                                <select class="form-control" id="BusinessAnalyst"
+                                        ng-options="businessanalyst.Id as businessanalyst.Name for businessanalyst in AllUsers"
+                                        ng-model="assessmentFormData.BusinessAnalystId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Expert:</th>
+                            <td>
+                                <select class="form-control" id="Expert"
+                                        ng-options="expert.Id as expert.Name for expert in AllUsers"
+                                        ng-model="assessmentFormData.MainExpertId" ng-blur="Update()" ng-disabled="blocked()"></select>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br />
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+                <div class="infoBlocks" onclick="toggle_div_fun('descriptionOnHide');" onmousedown="return false">
+                    <br> <label> <a>Description </a> </label>
+                </div>
+                <hr />
+                <div id="descriptionOnHide">
+                    <table class="AssessmentFormTable">
+                        <tr>    <td><textarea ng-blur="Update()" ng-model="assessmentFormData.Description" ng-readonly="blocked()" id="descriptionInput" value="{{assessmentFormData.Description}}" />  </td>   </tr>
+
+                    </table>
+
+                    <br />
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

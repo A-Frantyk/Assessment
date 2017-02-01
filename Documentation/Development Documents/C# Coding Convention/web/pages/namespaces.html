@@ -1,0 +1,30 @@
+<!DCTYPE HTML>
+
+<html>
+<head>
+    <title> Coding Convention C# </title>
+    <meta charset="utf-8">
+    <link href="../css/indexCSS.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="body">
+   <h3> 2.1	Namespaces</h3>
+            <p>The general rule for naming namespaces is to use the company name followed by the</p> 
+<p>technology name and optionally the feature and design as follows.</p> 
+<p>CompanyName.TechnologyName[.Feature][.Design]</p> 
+<p>For example:</p> 
+<p>Baseshop.Media</p> 
+<p>Baseshop.Media.Design</p> 
+<p>•Use a stable, recognized technology name at the second level of a hierarchical name.</p>  <p>Use organizational hierarchies as the basis for namespace hierarchies.</p> 
+ <p> For example, the System.Windows.Forms.Design namespace contains designers and related</p>  <p>classes used to design System.Windows.Forms based applications.</p> 
+<p>•	A nested namespace should have a dependency on types in the containing namespace. </p> 
+   <p> For example, the classes in the System.Web.UI.Design depend on the classes in  System.Web.UI. </p> 
+            <p>However, the classes in System.Web.UI do not depend on the classes in System.UI.Design. </p> 
+<p>•	You should use Pascal case  for namespaces, and separate logical components with</p>  <p>periods, as in Microsoft.Office.PowerPoint. If your brand employs nontraditional casing,</p>  <p>follow the casing defined by your brand, even if it deviates from the prescribed Pascal case. </p> 
+<p>•	Use plural namespace names if it is semantically appropriate. For example, use</p>  <p>System.Collections rather than System.Collection. Exceptions to this rule are brand names</p>  <p>and abbreviations. For example, use System.IO rather than System.IOs.</p> 
+<p>•	Do not use the same name for a namespace and a class.</p> 
+        </div>
+         <a href="list.html">Back to Table List</a>
+    </body>
+</html>

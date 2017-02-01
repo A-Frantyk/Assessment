@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analytics</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+    
+    <link rel="shortcut icon" href="https://dashboard.softserveinc.com/assets/images/favicon-16x16.ico">
+    
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery.splitter-0.14.0.js"></script>
+    <link rel="stylesheet" href="css/jquery.splitter.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-change.css">
+
+    </head>
+<body>
+    <div id="wrapper" ng-app="myModule">
+        <div id="header">
+            <div class="col-md-12">
+                <nav >
+                    <div class="navbar-fixed-top">
+                        <div class="">
+      <a class="navbar-brand" href="#"><img id="logo" src="./Images/ss-excellence-midnight-cut.png"></a>
+                        </div>
+                        <div id="menu" class="container-fluid">
+                        <ul class="nav navbar-nav navbar-default">
+                            <li> <a href="Assessments.html" class="active" >ASSESSMENTS</a> </li>
+                            <li ><a href="">ANALYTICS</a> </li>
+                            <li> <a href="">ADMINISTRATION</a> </li> 
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right"> 
+                            <li> 
+                                <a href="">
+                                    Roman Yakhymets
+                                </a> 
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div id="main-content" class="col-md-12">
+            
+            <div id="left-panel" class="">
+                <nav class=" " id="">             
+                  <div class="" >
+                      <div id="filter" class=" well"><h5>Filter</h5><input type="search" class="form-control">
+                      </div>
+                      <div class="col-md-12 well well-sm">
+
+                      <div ng-controller="ctrlRead"  id="loa" class="">
+                      <div class="col-md-12 panel panel-heading" >
+                        <h5 class="col-md-3">Assessments:</h5>
+                        <a class="col-md-3 col-md-offset-6 btn btn-xs btn-primary"><span class="glyphicon glyphicon-plus"></span>Add </a>
+                      </div>                  
+                        <div id="loadiv">
+                            <ul class="list-unstyled well" ng-repeat="item in pagedItems[currentPage]| orderBy:sort.sortingOrder:sort.reverse">
+                            <li><b>Project: </b><a href="#">{{item.project}}</a></li>
+                            <li><b>Finish Date: </b>{{item.fdate}}</li>
+                            <li><b>Coordinator: </b>{{item.coordinator}}</li>
+                        </ul>
+                        </div>
+                        <div class="paging">
+                            <ul class="pagination pull-right">
+                                <li ng-class="{disabled: currentPage == 0}">
+                                    <a href ng-click="prevPage()">Prev</a>
+                                </li>
+                            
+                                <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) "
+                                    ng-class="{active: n == currentPage}"
+                                ng-click="setPage()">
+                                    <a href ng-bind="n + 1">1</a>
+                                </li>
+                             
+                                <li ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                                    <a href ng-click="nextPage()">Next</a>
+                                </li>
+                            </ul>
+                        </div>  
+                      </div>
+                      </div>
+                  </div>
+                </nav>
+            </div>
+            <div id="right-panel" class="">
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                      <a data-toggle="tab" href="#home">Summary</a>
+                  </li>
+                  <li>
+                      <a data-toggle="tab" href="#menu1">Strong Areas</a>
+                  </li>
+                  <li>
+                      <a data-toggle="tab" href="#menu2">Weak Areas</a>
+                  </li>
+                  <li>
+                      <a data-toggle="tab" href="#menu3">Recommendations</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                      <div id="home" class="tab-pane fade in active">
+                        <h3>Assessments Details</h3>
+                          <p>Some content.</p>
+                      </div>
+                      <div id="menu1" class="tab-pane fade">
+                        <h3>Strong Areas</h3>
+                        <p>Some content.</p>
+                      </div>
+                      <div id="menu2" class="tab-pane fade">
+                        <h3>Weak Areas</h3>
+                          <div id="weak table">
+                              <p>Some content.</p>
+                          </div>
+                      </div>
+                      <div id="menu3" class="tab-pane fade">
+                        <h3>Recommendations</h3>
+                        <p>Some content.</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+        
+    </div>
+</body>
+</html>

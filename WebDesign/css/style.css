@@ -1,0 +1,106 @@
+body{
+    background-color: #EEEEEE;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a{
+    
+}
+
+a:hover{
+    text-decoration: none;
+    color: #11B8D5;
+}
+
+#header{
+    margin-bottom: 50px;
+}
+
+#logo{
+
+}
+
+#main-content{
+    margin-top: 50px;
+    min-height: 100vh;
+    margin-bottom: 35px;
+}
+
+#loa{
+    background-color: white;
+    width: auto;
+    height: 360px;
+    min-height: 290px;
+    max-height: 360px;
+    overflow-y: scroll;
+}
+
+#loa div a{
+    margin-top: 7px;
+} 
+
+table tr td, table tr th{
+    text-align: center;
+}
+table tr th a:hover{
+    cursor: pointer;
+    text-decoration:none;
+}
+table tr th a:hover span{
+    color: #11B8D5;    
+}
+
+.table-hor{
+    overflow-x: scroll;
+
+}
+
+
+#filter{
+    margin-top: 30px;
+    width: auto;
+    background-color: white;
+
+}
+#filter input{
+    margin: 10px; 
+    padding-right: 20px;
+}
+
+#left-panel{
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-top: 70px;
+    width: 300px;
+    position: fixed;
+}
+
+ .vsplitter{
+    left: 399px;
+    color: #171B65;
+}
+
+#right-panel{
+    min-height: inherit;
+    background-color: white;
+    width: auto;
+}
+
+#footer{
+    
+}
+/* scrollbar style*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+

@@ -1,0 +1,44 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+
+<div ng-app="Assessments" ng-controller="IndicatorSamplesController">
+    <div class="mainDiv">
+        <ul class="hr">
+            <li>Assessment Type: <a ui-sref="Types">{{ass.Name}} </a></li>
+            <li>Area: <a ui-sref="Areas({ Id: Area.AssesmentTypeId })">{{Area.Name}} </a></li>
+            <li>Criteria: <a ui-sref="CriteriaSamples({ Id: Criteria.AreaId })">{{Criteria.Name}}</a></li>
+            
+            
+        </ul>
+        <button class=" btn btn-primary" ng-click="startForm2()"><span class="glyphicon glyphicon-plus"></span> Add indicator</button>
+    </div>
+    <table id="tbl" class="tableSS">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr ng-repeat="indicator in Indicators | orderBy:'Order'">
+                <td>{{indicator.Id}}</td>
+                <td class="col-lg-12"><textarea class="noborder" rows="1" ng-model=" indicator.Name" ng-blur="Update(indicator)" /></td>
+                
+                <td ng-click="Up(indicator)"><span class="glyphicon glyphicon-chevron-up"></span></td>
+                <td ng-click="Down(indicator)"><span class="glyphicon glyphicon-chevron-down"></span></td>
+                
+                <td ><button class="btn btn-default btn-sm" ng-click="startForm(indicator)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+   
+     
+   
+     </div>
+
+

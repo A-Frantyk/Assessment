@@ -1,0 +1,65 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<div ng-app="Assessments" ng-controller="CriteriaSamplesController">
+    <div class="mainDiv">
+        <ul class="hr">
+            <li>Assessment Type: <a ui-sref="Types">{{ass.Name}} </a></li>
+            <li>Area: <a ui-sref="Areas({ Id: Area.AssesmentTypeId })">{{Area.Name}}</a></li>
+
+        </ul>
+
+        <button class=" btn btn-primary" ng-click="startForm2()"><span class="glyphicon glyphicon-plus"></span> Add criteria</button>
+    </div>
+        <table class="tableSS">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                   
+                    <th>Scope</th>
+                    <th>Time</th>
+                    <th>Quality</th>
+                    <th>Cost</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+                <tr ng-repeat="crit in Criteria | orderBy:'Order'">
+                    <td>{{crit.Id}}</td>
+                    <td class="col-lg-4"><textarea rows="1" class="noborder" ng-model="crit.Name" ng-blur="Update(crit)" /></td>
+                    
+                    <td class="col-lg-2">
+                        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts" ng-model="crit.ScopeConstraintImpactId"
+                                class="noborder"
+                                ng-change="Update(crit)"></select>
+                    </td>
+                    <td class="col-lg-2">
+                        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts" class="noborder"
+                                ng-model="crit.TimeConstraintImpactId" ng-change="Update(crit)"></select>
+                    </td>
+                    <td class="col-lg-2">
+                        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts" class="noborder"
+                                ng-model="crit.QualityConstraintImpactId" ng-change="Update(crit)"></select>
+                    </td>
+                    <td class="col-lg-2">
+                        <select ng-options="Impact.Id as Impact.Name for Impact in Impacts" class="noborder"
+                                ng-model="crit.CostConstraintImpactId" ng-change="Update(crit)"></select>
+                    </td>
+                    <td title="Indicatrs"><a ui-sref="IndicatorSamples({ Id: {{crit.Id}} })"><span class="glyphicon glyphicon-share-alt"></span></a></td>
+                    <td ng-click="Up(crit)"><span class="glyphicon glyphicon-chevron-up"></span></td>
+                    <td ng-click="Down(crit)"><span class="glyphicon glyphicon-chevron-down"></span></td>
+                    <td><button class="btn btn-default btn-sm" ng-click="startForm(crit)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    
+    
+  
+     </div>
+
+

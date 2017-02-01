@@ -1,0 +1,33 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@Styles.Render("~/Content/css")
+
+<form ng-app="Assessments" ng-controller="AddActionItemController" ng-submit="submit()">
+
+    <div class="form-group">
+        <label>Criterion:</label>
+        <select class="form-control"
+                ng-options="cr.CriteriaId as cr.CriteriaName for cr in criteriasObj"
+                ng-model="actionItems.CriteriaId" required></select>
+        <p></p>
+        <label>Action Item:</label>
+        <input class="form-control" type="text"
+               ng-model="actionItems.ActionItem" required />
+        <p></p>
+        <label>Due Date:</label>
+        <input class="" type="date"
+               ng-model="actionItems.DueDate" required />
+        <p></p>
+        <label>Responsible Person:</label>
+        <select class="form-control"
+                ng-options="pm.Id as pm.Name for pm in usersObj"
+                ng-model="actionItems.ResponsiblePersonId" required></select>
+        <p></p>
+        <button type="submit" >Save</button>
+        <button ng-click="closeThisDialog(0)">Close</button>
+        <hr />
+
+
+    </div>
+</form>
+
+

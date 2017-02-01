@@ -1,0 +1,100 @@
+<!DCTYPE HTML>
+
+<html>
+<head>
+    <title> Coding Convention C# </title>
+    <meta charset="utf-8">
+    <link href="../css/indexCSS.css" rel="stylesheet">
+    </head>
+
+    <body>
+   <div class="body">
+        
+      <h3> 2.8	Files</h3>
+<p>•	Each class/interface has to be placed into a separate file. The file name has to be the same as the class/interface name it contains.</p>
+<p>•	A file may contain several classes in the case of nested classes or if just one class is considered to be inherited from.</p>
+       <h3>3.	Format</h3>
+       <p>•	Establish a standard size for an indent and use it consistently through the project. The default indent is the default tab size (4 space characters).	</p>
+       <p>•	Line of code has to be less than 80 characters long.</p>
+       <p>•	Align open and close braces vertically where brace pairs align:</p>
+<p>for (i = 0; i  NUM_OBJECTS; i++)
+{
+	...
+    }</p>
+       <p>•	Indent code along lines of logical construction:</p>
+<pre>if (reportId != BaseTable.INVALID_PK) 
+{
+try 
+{
+recReport = RepManager.GetRecordByPK(reportId);
+}
+catch (Exception ex) 
+{
+HandleException(ex);				
+}
+}
+else
+{
+	recReport = new RecReports();			
+}
+</pre>
+<p>•	In switch statements use indenting on two levels: </p>
+<pre>switch (e.Button.Text) 
+{
+case "Triangle" : 
+		Triangle triangle1 = new Triangle("Triangle1", true);
+       IPointy iptTr = (IPointy) triangle1;
+		Triangle1.Draw();
+		break;
+	case "Hexagon" : 
+		Hexagon hexagon1 = new Hexagon("Hexagon1", false);
+IPointy iptTr = (IPointy) hexagon1;
+		hexagon1.Draw();
+		break;				
+}
+</pre>
+<p>•	Use spaces before and after most operators (except ++, --, ?…:) : isDisposing = false instead of isDisposing=false. </p>
+<p>•	Avoid placing more than one statement per line (except ++, --, ?…:).</p>
+<p>•	Use line breaks and empty lines to create “paragraphs” of code to separate the logical segments. Use line breaks and empty lines before code commenting segments.</p>
+<p>•	Constant variables group initialization code and enumeration fields initialization code has to be lined up on the equality sign:</p>
+
+public const int DBVERSION		= 4;
+public const int TINYINT_OWERFLOW	= 8115;
+public const int TRIGGER_EXCEPT	= 50000;
+<pre>
+public enum StatusMode 
+{
+	Planned	= 1,
+Active	= 2,
+	InActive	= 4,
+	All		= 7
+};	
+</pre>
+<p>•	In case of long statement, break it to several lines and use double indenting in next lines. For example:</p>
+<pre>
+if (Member.Address.Room != null && Member.Address.Room != "" &&
+(Member.Address.Sect > 0 || Member.Address.BuildNo > 0))
+		Member.Address.Normalize();
+</pre>
+<p>•	In case of long statement, break it in accordance with logical code structure. It is allowed to add additional indent to indicate level of parts in expression’s structure. Following example is wrong formatting:</p>
+<pre>
+if (Address.Room != null && Address.Room != "" && (Address.Sect
+> 0 || ((Address.BuildNo != null && Address.BuildNo !=
+"")?Address.BuildNo:DEFAULT_BUILDING_NO) > 0) &&
+Address.IsNotPrepared)
+	Member.Address.Normalize();
+
+Following example is correct:
+
+if (Address.Room != null && Address.Room != "" &&
+(Address.Sect > 0 || 
+((Address.BuildNo != null && Address.BuildNo != "")?
+Address.BuildNo:DEFAULT_BUILDING_NO) > 0) &&
+Address.IsNotPrepared)
+	Member.Address.Normalize();
+</pre>
+<a href="list.html">Back to Table List </a>
+       
+        </div>
+    </body>
+</html>

@@ -1,0 +1,104 @@
+ -------------- Error (2016-05-19 00:32:24.8462) --------------
+ 
+ Call Site: AssessmentsWebApi.Filters.GlobalExeptionFilterAttribute.OnException
+ Exception Type: System.NullReferenceException
+ Exception Message: Unable to parse AssessmentDTO object that is null.
+ Stack Trace:    at AssessmentServices.Factory.DTOFactory.ThrowIfParameterIsNull(Type dtoType) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 1571
+   at AssessmentServices.Factory.DTOFactory.Parse(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 438
+   at AssessmentsWebApi.Controllers.AssessmentsController.EditAssessment(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentsWebApi\Controllers\AssessmentsController.cs:line 160
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+ Additional Info: No data in request.
+
+ -------------- Error (2016-05-19 00:32:27.5761) --------------
+ 
+ Call Site: AssessmentsWebApi.Filters.GlobalExeptionFilterAttribute.OnException
+ Exception Type: System.NullReferenceException
+ Exception Message: Unable to parse AssessmentDTO object that is null.
+ Stack Trace:    at AssessmentServices.Factory.DTOFactory.ThrowIfParameterIsNull(Type dtoType) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 1571
+   at AssessmentServices.Factory.DTOFactory.Parse(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 438
+   at AssessmentsWebApi.Controllers.AssessmentsController.EditAssessment(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentsWebApi\Controllers\AssessmentsController.cs:line 160
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+ Additional Info: No data in request.
+
+ -------------- Error (2016-05-19 00:32:43.7103) --------------
+ 
+ Call Site: AssessmentsWebApi.Filters.GlobalExeptionFilterAttribute.OnException
+ Exception Type: System.NullReferenceException
+ Exception Message: Unable to parse AssessmentDTO object that is null.
+ Stack Trace:    at AssessmentServices.Factory.DTOFactory.ThrowIfParameterIsNull(Type dtoType) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 1571
+   at AssessmentServices.Factory.DTOFactory.Parse(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 438
+   at AssessmentsWebApi.Controllers.AssessmentsController.EditAssessment(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentsWebApi\Controllers\AssessmentsController.cs:line 160
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+ Additional Info: No data in request.
+
+ -------------- Error (2016-05-19 00:32:58.9595) --------------
+ 
+ Call Site: AssessmentsWebApi.Filters.GlobalExeptionFilterAttribute.OnException
+ Exception Type: System.NullReferenceException
+ Exception Message: Unable to parse AssessmentDTO object that is null.
+ Stack Trace:    at AssessmentServices.Factory.DTOFactory.ThrowIfParameterIsNull(Type dtoType) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 1571
+   at AssessmentServices.Factory.DTOFactory.Parse(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentServices\Factory\DTOFactory.cs:line 438
+   at AssessmentsWebApi.Controllers.AssessmentsController.EditAssessment(AssessmentDTO assessmentDTO) in d:\LV-175.Net\Assessment\AssessmentsWebApi\Controllers\AssessmentsController.cs:line 160
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+ Additional Info: No data in request.
+
